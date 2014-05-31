@@ -25,6 +25,7 @@ GEM
       multi_json (~> 1.3)
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
+    addressable (2.3.6)
     annotate (2.6.3)
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
@@ -49,6 +50,7 @@ GEM
     diff-lcs (1.1.3)
     erubis (2.7.0)
     eventmachine (1.0.3)
+    excon (0.32.1)
     execjs (2.1.0)
     factory_girl (2.3.2)
       activesupport
@@ -69,6 +71,15 @@ GEM
     guard-rspec (0.5.5)
       guard (>= 0.8.4)
     hashie (2.1.1)
+    heroku (3.6.0)
+      heroku-api (~> 0.3.17)
+      launchy (>= 0.3.2)
+      netrc (~> 0.7.7)
+      rest-client (~> 1.6.1)
+      rubyzip
+    heroku-api (0.3.18)
+      excon (~> 0.27)
+      multi_json (~> 1.8)
     hike (1.2.3)
     httparty (0.13.1)
       json (~> 1.8)
@@ -89,6 +100,8 @@ GEM
     jquery-ui-themes (0.0.11)
       httparty
     json (1.8.1)
+    launchy (2.4.2)
+      addressable (~> 2.3)
     less (2.5.1)
       commonjs (~> 0.2.7)
     less-rails (2.5.0)
@@ -111,6 +124,7 @@ GEM
       metaclass (~> 0.0.1)
     multi_json (1.10.1)
     multi_xml (0.5.5)
+    netrc (0.7.7)
     pg (0.12.2)
     polyglot (0.3.5)
     pry (0.9.12.6)
@@ -148,6 +162,8 @@ GEM
     rdoc (4.1.1)
       json (~> 1.4)
     ref (1.0.5)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     rspec (2.9.0)
       rspec-core (~> 2.9.0)
       rspec-expectations (~> 2.9.0)
@@ -161,6 +177,7 @@ GEM
       activesupport (>= 3.0)
       railties (>= 3.0)
       rspec (~> 2.9.0)
+    rubyzip (1.1.1)
     sass (3.2.19)
     sass-rails (4.0.3)
       railties (>= 4.0.0, < 5.0)
@@ -218,6 +235,7 @@ DEPENDENCIES
   factory_girl_rails (= 1.4.0)
   gon
   guard-rspec (= 0.5.5)
+  heroku
   jbuilder (~> 1.2)
   jquery-rails
   jquery-turbolinks
