@@ -1,0 +1,153 @@
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 70%; 
+  margin: 45px; 
+  padding: 20px;
+  @include box_sizing;
+}
+
+header{
+	background-color: black;
+}
+
+h1{
+	color:#CFB486;
+}
+.my-button{
+	background-color: #000000;
+	background-image: url('button-gold.png') !important;
+	width: 108px !important;
+	height: 30px !important;
+	color: #2A2A22;
+	border: none;	
+}
+
+.my-button > a{
+	color: #2A2A22;
+}
+
+.my-button:hover{
+	background-color: #000000;
+	background-image: url('button-light.png') !important;
+	color: #33332D;
+	border: none;	
+}
+.my-button > a:hover;{
+	color: #33332D;
+}
+
+.btn, .btn-primary, .btn-primary > a{
+	color: #F0F0F0 !important;
+	width: 108px;
+	height: 30px;
+}
+
+.btn-primary, .btn-primary > a:hover{
+	color: #F0F0F0 !important;
+	text-decoration: none;
+}
+
+.form-container{
+	width: 1000px;
+	height: 380px;
+}
+.form-div{
+	width:500px;
+	float:left;
+}
+label{
+	color:gray;
+}
+
+.state-select{
+	margin-right:10px !important;
+}
+
+.inline{
+	display:inline-block !important;
+}
+.input-xxs {
+	width:40px;
+}
+.input-xs {
+	width:70px;
+}
+.input-sm {
+	width:85px;
+}
+
+.input-med{
+	width:120px !important; 
+}
+
+.input-lrg{
+	width:280px;
+}
+
+.darkness{
+	background-color: #000000 !important;
+	background-image: none;
+	border-bottom: 2px solid #640014 !important;
+}
+
+.navbar .nav > li > a {
+	text-shadow: none;
+	color: #F0F0F0;
+	width: 80px;
+	padding-top:50px;
+}
+
+.navbar .nav > .active-link > a {
+	color: #CFB486 !important;
+}
+.navbar .nav > li > a:focus, .navbar .nav > li > a:hover {
+	color: #CFB486;
+}
+
+span.brand{
+	width:201px;
+	height:90px;
+}
+
+.dropdown-menu > li > a {
+	color: #F0F0F0;
+}
+
+.dropdown-menu > li > a:hover{
+	color: #CFB486;
+	background-color: #640014;
+	background-image: none;
+}
+
+.dropdown-menu > .active-link > a, .dropdown-menu > .active-link > a:hover, .dropdown-menu > .active-link > a:focus {
+    background-image: url('background_3.png') repeat !important;
+    color: #CFB486 !important;
+    outline: 0 none;
+    text-decoration: none;
+}
+
+.dropdown-menu{
+  display: none;        
+  background: url('background_3.png') repeat;
+  left: -10px !important;
+  top: 70px;
+  min-width: 150px !important;
+  min-height:80px;
+}
+
+.dropdown-menu:after{
+    border-bottom: none !important;
+  }
+
+.dropdown-menu:before{
+    border-bottom: none !important;
+  }
+
+.bootstrap-timepicker-widget.dropdown-menu{
+	background-image: none;
+	background-color:#EEEEEE;
+}
+footer{
+	color: #F0F0F0;
+}

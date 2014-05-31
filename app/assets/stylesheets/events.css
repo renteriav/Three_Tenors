@@ -1,0 +1,42 @@
+#main-photo{
+	background: #000000 url('Di_Gala_b_w.png') no-repeat right top;
+	font: normal 13px Georgia, "Times New Roman", Times, serif;
+	color: #4E515B;
+	height: 714px;
+	width:1200px;
+}
+
+.datebox{
+	font-size: 30px;
+	text-align: center;
+	padding: 10px;
+	color: #C0C0C0;
+	width: 80px;
+	height: 90px;
+	background: #640014;
+	float: left;
+	font-family: 'open sans', sans-serif;
+	text-transform: uppercase;
+}
+
+.event-info{
+	float: left;
+	padding-left: 10px;
+	color: #F0F0F0;
+}
+
+.golden{
+	color: #CFB486;
+}
+
+.header-gray{
+	font-family: 'open sans', sans-serif;
+	font-weight: normal;
+	border-bottom: 1px solid #CFB486;
+	color: #C0C0C0;
+}
+
+.events-container{
+	margin-left:20px;
+	width:300px;
+}
