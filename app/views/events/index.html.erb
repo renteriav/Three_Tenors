@@ -12,7 +12,8 @@
 					<h5 class="golden"><%= event.title%></h5>
 					<p><%= "#{format_day(event.date)}, #{format_time(event.time)}" %></p>
 					<p><%= event.location %></p>
-					<p><%= event.address %></p>	
+					<p><%= event.street %></p>
+					<p><%= "#{event.city}, #{event.zip}"%>	
 				</div>
 			</div>
 		</br>
