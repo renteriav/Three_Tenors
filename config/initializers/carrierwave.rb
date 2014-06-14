@@ -14,7 +14,7 @@ CarrierWave.configure do |config|
     :region => 'us-east-1' #ENV['S3_REGION']
   }
 
-   For testing, upload files to local `tmp` folder.
+  # For testing, upload files to local `tmp` folder.
   if Rails.env.test?
     config.storage = :file
     config.enable_processing = false
