@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
+//= require jquery.ui.all
 //= require twitter/bootstrap
 //= require bootstrap-timepicker
 //= require gallery/galleria

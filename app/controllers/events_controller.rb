@@ -1,15 +1,22 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin!
+  skip_before_action :authenticate_admin!, only: [:upcoming, :past]
 
   def index
+    @events = Event.all
+  end
+  
+  def upcoming
     @date = Date.today
-    if params[:events] == "past"
-      @events = Event.where("date < ?", @date)
-      @header = "Past Events"
-    else
-      @events = Event.where("date >= ?", @date)
-      @header = "Upcoming Events"
-    end
+    @events = Event.where("date >= ?", @date).order(date: :asc)
+    @header = "Upcoming Events"
+  end
+  
+  def past
+    @date = Date.today
+    @events = Event.where("date < ?", @date).order(date: :asc)
+    @header = "Past Events"
   end
 
   def show
@@ -66,6 +73,6 @@ class EventsController < ApplicationController
     end
 
     def event_params
-      params.require(:event).permit(:title, :location, :street, :city, :zip, :date, :time, :ticket_link, :location_website)
+      params.require(:event).permit(:title, :location, :street, :city, :state, :zip, :date, :time, :ticket_link, :location_website)
     end
 end

@@ -38,8 +38,6 @@ h1{
 
 .btn, .btn-primary, .btn-primary > a{
 	color: #F0F0F0 !important;
-	width: 108px;
-	height: 30px;
 }
 
 .btn-primary, .btn-primary > a:hover{
@@ -90,11 +88,13 @@ label{
 	border-bottom: 2px solid #640014 !important;
 }
 
+.push-down{
+	padding-top:50px;
+}
 .navbar .nav > li > a {
 	text-shadow: none;
 	color: #F0F0F0;
 	width: 80px;
-	padding-top:50px;
 }
 
 .navbar .nav > .active-link > a {
@@ -115,11 +115,11 @@ span.brand{
 
 .dropdown-menu > li > a:hover{
 	color: #CFB486;
-	background-color: #640014;
+	background-color: #640014 !important;
 	background-image: none;
-}
-
-.dropdown-menu > .active-link > a, .dropdown-menu > .active-link > a:hover, .dropdown-menu > .active-link > a:focus {
+}	
+	
+.dropdown-submenu:focus > a, .dropdown-menu > .active-link > a, .dropdown-menu > .active-link > a:hover, .dropdown-menu > .active-link > a:focus {
     background-image: url('background_3.png') repeat !important;
     color: #CFB486 !important;
     outline: 0 none;
@@ -130,7 +130,7 @@ span.brand{
   display: none;        
   background: url('background_3.png') repeat;
   left: -10px !important;
-  top: 70px;
+  top: 30px;
   min-width: 150px !important;
   min-height:80px;
 }
@@ -142,6 +142,10 @@ span.brand{
 .dropdown-menu:before{
     border-bottom: none !important;
   }
+  
+.dropdown-submenu > .dropdown-menu{
+	left:100% !important;
+}
 
 .bootstrap-timepicker-widget.dropdown-menu{
 	background-image: none;

@@ -1,22 +1,23 @@
-<div id="main-photo">
-    <div class="pull-left events-container">
-        <h3 class="header-gray"><%= @header %></h3>
-		<% @events.each do |event| %>
-			<div class="container">
-				<div class="datebox">
-					<%= event.date.strftime('%b') %>
-					<br>
-					<%= event.date.strftime('%d') %>
-				</div>
-				<div class="event-info">
-					<h5 class="golden"><%= event.title%></h5>
-					<p><%= "#{format_day(event.date)}, #{format_time(event.time)}" %></p>
-					<p><%= event.location %></p>
-					<p><%= event.street %></p>
-					<p><%= "#{event.city}, #{event.zip}"%>	
-				</div>
-			</div>
-		</br>
-		<% end %>
-    </div><!--/span-->
-</div>
+<table class="table table-hover">
+  <tr>
+    <th>Title</th>
+    <th>Location</th>
+    <th>Date</th>
+	<th>Time</th>
+	<th></th>
+    <th></th>
+    <th></th>
+  </tr>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= event.title %></td>
+        <td><%= event.location %></td>
+        <td><%= format_day event.date %></td>
+		<td><%= format_time event.time %></td>
+		<td><%= link_to 'Info', event %></td>
+        <td><%= link_to 'Edit', edit_event_path(event) %></td>
+        <td><%= link_to 'Delete', event, method: :delete, remote: true, class: "triger" %></td>
+      </tr>
+    <% end %>
+</table>
+<%= link_to 'New Event', new_event_path, class: "btn btn-small btn-primary" %>

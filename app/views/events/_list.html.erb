@@ -1,0 +1,22 @@
+<div id="main-photo">
+    <div class="pull-left events-container">
+        <h3 class="header-gray"><%= @header %></h3>
+		<% @events.each do |event| %>
+			<div class="single-event-container">
+				<div class="datebox inline">
+					<%= event.date.strftime('%b') %>
+					<br>
+					<%= event.date.strftime('%d') %>
+				</div>
+				<div class="event-info inline">
+					<h5 class="golden" style="margin-top:0px"><%= event.title%></h5>
+					<p><%= "#{format_day(event.date)}, #{format_time(event.time)}" %></p>
+					<p><%= event.location %></p>
+					<p><%= event.street %></p>
+					<p><%= "#{event.city}, #{event.state}, #{event.zip}"%>	
+				</div>
+			</div>
+		</br>
+		<% end %>
+    </div><!--/span-->
+</div>

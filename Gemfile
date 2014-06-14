@@ -22,6 +22,9 @@ gem 'thin'
 gem 'bootstrap-timepicker-rails'
 gem 'chronic'
 gem 'gon'
+gem 'carrierwave'
+gem 'fog'
+gem 'devise'
 gem 'pg', '0.12.2'
 
 group :development, :test do 

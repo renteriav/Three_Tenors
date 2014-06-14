@@ -5,8 +5,9 @@
 #  id               :integer          not null, primary key
 #  title            :string(255)
 #  location         :string(255)
-#  address          :string(255)
+#  street           :string(255)
 #  city             :string(255)
+#  state            :string(255)
 #  zip              :string(255)
 #  date             :date
 #  time             :time
