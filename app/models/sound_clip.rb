@@ -11,13 +11,23 @@
 #
 
 class SoundClip < ActiveRecord::Base
+  include Rails.application.routes.url_helpers
   mount_uploader :attachment, AttachmentUploader
   
-  #after_destroy :remove_id_directory
   after_destroy :remove_file_directory
     
   validates :title, presence: true
   validates :attachment, presence: true
+  
+  def to_jq_upload
+      {
+        "name" => read_attribute(:attachment),
+        "size" => attachment.size,
+        "url" => attachment.url,
+        "delete_url" => "/sound_clips/#{id}",
+        "delete_type" => "DELETE" 
+      }
+  end
 
   protected
 
@@ -26,9 +36,5 @@ class SoundClip < ActiveRecord::Base
       path = File.expand_path(attachment.store_path, attachment.root)
       FileUtils.remove_dir(path, force: false)
    end
-  
- # def remove_id_directory
- #  FileUtils.remove_dir("#{Rails.root}/public/uploads/sound_clip/attachment/#{id}", :force => true)
- # end
 
 end

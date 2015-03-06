@@ -1,30 +1,35 @@
 #main-photo{
-	background: #000000 url('Di_Gala_b_w.png') no-repeat right top;
+	background: #000000 url('Di_Gala_b_w.png') no-repeat 150px top;
 	font: normal 13px Georgia, "Times New Roman", Times, serif;
 	color: #4E515B;
-	height: 714px;
-	width:1200px;
+	height: 750px;
+	width:auto;
+	overflow: hidden;
+	margin-left: 50px;
 }
 
 .datebox{
 	font-size: 30px;
 	text-align: center;
-	padding: 10px;
+	padding: 10px 20px;
 	color: #C0C0C0;
-	width: 80px;
-	height: 90px;
+	width: 100px;
+	height: 110px;
 	background: #640014;
 	float: left;
 	font-family: 'open sans', sans-serif;
 	text-transform: uppercase;
 }
 
-.event-info{
+.event-info {
 	float: left;
 	padding-left: 10px;
-	color: #F0F0F0;
 	font-family: Tahoma, Verdana, Segoe, sans-serif !important;
 	font-size: 14px !important;
+}
+
+.event-info, .event-info a{
+	color: #F0F0F0;
 }
 
 .golden{

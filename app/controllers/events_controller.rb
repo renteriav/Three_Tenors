@@ -28,6 +28,7 @@ class EventsController < ApplicationController
   end
 
   def edit
+    @selected_state = @event.state
   end
 
   def create

@@ -10,9 +10,14 @@ header{
 	background-color: black;
 }
 
+.logo{
+	background: #000000 url('Di_gala_logo.png') no-repeat 30px 10px;
+}
+
 h1{
 	color:#CFB486;
 }
+
 .my-button{
 	background-color: #000000;
 	background-image: url('button-gold.png') !important;
@@ -53,6 +58,12 @@ h1{
 	width:500px;
 	float:left;
 }
+
+.bar {
+    height: 18px;
+    background: green;
+}
+
 label{
 	color:gray;
 }
@@ -86,6 +97,9 @@ label{
 	background-color: #000000 !important;
 	background-image: none;
 	border-bottom: 2px solid #640014 !important;
+	border-left: none;
+	border-right: none;
+	margin-bottom: 0px;
 }
 
 .push-down{
@@ -151,6 +165,11 @@ span.brand{
 	background-image: none;
 	background-color:#EEEEEE;
 }
+
 footer{
 	color: #F0F0F0;
+}
+
+.gray{
+	color:gray;
 }

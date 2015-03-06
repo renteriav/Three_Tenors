@@ -5,6 +5,12 @@ class SoundClipsController < ApplicationController
 
   def index
     @sound_clips = SoundClip.all
+    respond_to do |format|
+      format.html
+      format.json {
+        render :json => @sound_clips.collect { |s| s.to_jq_upload }.to_json
+      }
+    end
   end
 
   def show
@@ -16,19 +22,28 @@ class SoundClipsController < ApplicationController
 
   def edit
   end
-
+ 
   def create
     @sound_clip = SoundClip.new(sound_clip_params)
-
-    respond_to do |format|
+      
       if @sound_clip.save
-        format.html { redirect_to @sound_clip, notice: 'Sound clip was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @sound_clip }
+            respond_to do |format|
+              format.html { redirect_to sound_clips_path, notice: 'Sound clip was successfully created.' }
+              format.json {
+                render :json => {files:[@sound_clip.to_jq_upload]},status: :created, location: @sound_clip}
+                
+            end
       else
-        format.html { render action: 'new' }
-        format.json { render json: @sound_clip.errors, status: :unprocessable_entity }
+            render :json => [{:error => "custom_failure"}], :status => 304
       end
-    end
+      
+    #  if @sound_clip.save
+     #   format.html { redirect_to @sound_clip, notice: 'Sound clip was successfully created.' }
+     #   format.json { render :json => [@sound_clip.to_jq_upload].to_json  }
+    #  else
+    #    format.html { render action: 'new' }
+     #   format.json { render json: @sound_clip.errors, status: :unprocessable_entity }
+     # end
   end
 
   def update
@@ -52,6 +67,10 @@ class SoundClipsController < ApplicationController
   end
   
   def playlist
+    response.headers["Cache-Control"] = "no-cache, no-store, max-age=0, must-revalidate"
+    response.headers["Pragma"] = "no-cache"
+    response.headers["Expires"] = "Fri, 01 Jan 1990 00:00:00 GMT"
+    
     @sound_clips = SoundClip.all.order(title: :asc)
     @playlist = Array.new
     if @sound_clips.any?
