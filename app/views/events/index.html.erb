@@ -1,4 +1,18 @@
-<table class="table table-hover gray">
+<!-- Page Heading -->
+<div class="row">
+	<div class="col-lg-12">
+		<h1 class="page-header">
+			Events <small>Index</small>
+		</h1>
+        <ol class="breadcrumb">
+			<li class="active">
+				<i class="fa fa-calendar"></i> Events
+            </li>
+        </ol>
+	</div>
+</div>
+<!-- /.row -->
+<table class="table table-hover">
   <thead>
   	<tr>
     	<th>Title</th>
@@ -16,9 +30,9 @@
         <td><%= event.location %></td>
         <td><%= format_day event.date %></td>
 		<td><%= format_time event.time %></td>
-		<td><%= link_to 'Info', event, class: "btn btn-mini btn-success bold" %></td>
-        <td><%= link_to 'Edit', edit_event_path(event), class: "btn btn-mini btn-info bold" %></td>
-        <td><%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?'}, class: "triger btn btn-mini btn-danger bold" %></td>
+		<td><%= link_to 'Info', event, class: "btn btn-success btn-xs btn-block bold" %></td>
+        <td><%= link_to 'Edit', edit_event_path(event), class: "btn btn-info btn-xs btn-block bold" %></td>
+        <td><%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?'}, class: "triger btn btn-danger btn-xs btn-block bold" %></td>
       </tr>
     <% end %>
 </table>

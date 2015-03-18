@@ -2,13 +2,22 @@
 	background: #000000 url('Di_Gala_b_w.png') no-repeat 150px top;
 	font: normal 13px Georgia, "Times New Roman", Times, serif;
 	color: #4E515B;
-	height: 750px;
 	width:auto;
 	overflow: hidden;
+	min-height: 720px;
 	margin-left: 50px;
 }
+#main-photo-mobile{
+	background: #000000 url('Di_Gala_b_w.png') no-repeat center top;
+	min-height: 300px;
+	width:100%;
+	background-size: contain;
+}
 
-.datebox{
+#main-photo-mobile .event-info{
+	font-size: 12px !important;
+}
+.datebox {
 	font-size: 30px;
 	text-align: center;
 	padding: 10px 20px;
@@ -21,11 +30,23 @@
 	text-transform: uppercase;
 }
 
+.datebox-mobile{
+	margin-left:10px;
+	font-size: 15px;
+	text-align: center;
+	padding: 10px 10px !important;
+	color: #C0C0C0;
+	height: 80px;
+	background: #640014;
+	font-family: 'open sans', sans-serif;
+	text-transform: uppercase;
+}
+
 .event-info {
 	float: left;
 	padding-left: 10px;
 	font-family: Tahoma, Verdana, Segoe, sans-serif !important;
-	font-size: 14px !important;
+	font-size: 15px !important;
 }
 
 .event-info, .event-info a{
@@ -36,16 +57,26 @@
 	color: #CFB486;
 }
 
-.header-gray{
+.header-gray, .header-gray-mobile{
 	font-family: 'open sans', sans-serif;
 	font-weight: normal;
 	border-bottom: 1px solid #CFB486;
 	color: #C0C0C0;
 }
+.header-gray-mobile{
+	width:250px;
+	padding-left:10px;
+	margin-left:10px;
+}
+
+.clear-fix{
+	min-height: 220px;
+	min-width: 1px;
+}
 
 .events-container{
 	margin-left:20px;
-	width:350px;
+	min-width: 400px;
 }
 
 .single-event-container{

@@ -20,6 +20,7 @@ a:active, a:focus {
 }
 
 div.jp-audio,
+div.jp-compact,
 div.jp-audio-stream,
 div.jp-video {
 
@@ -163,7 +164,7 @@ a.jp-pause {
 	height: 40px;
 }
 
-a.jp-play, a.jp-play:hover, a.jp-pause, a.jp-pause:hover, a.jp-stop, a.jp-stop:hover, a.jp-previous, a.jp-previous:hover, a.jp-next, a.jp-next:hover, div.jp-seek-bar, div.jp-play-bar, a.jp-mute, a.jp-mute:hover, a.jp-unmute, a.jp-unmute:hover, a.jp-volume-max, a.jp-volume-max:hover, div.jp-volume-bar, div.jp-audio, div.jp-volume-bar, div.jp-volume-bar-value, a.jp-full-screen, a.jp-full-screen:hover, a.jp-restore-screen, a.jp-restore-screen:hover, a.jp-repeat, a.jp-repeat:hover, a.jp-repeat-off, a.jp-repeat-off:hover, a.jp-shuffle, a.jp-shuffle:hover, a.jp-shuffle-off, a.jp-shuffle-off:hover {
+a.jp-play, a.jp-play:hover, a.jp-pause, a.jp-pause:hover, a.jp-stop, a.jp-stop:hover, a.jp-previous, a.jp-previous:hover, a.jp-next, a.jp-next:hover, div.jp-seek-bar, div.jp-play-bar, a.jp-mute, a.jp-mute:hover, a.jp-unmute, a.jp-unmute:hover, a.jp-volume-max, a.jp-volume-max:hover, div.jp-volume-bar, div.jp-audio, div.jp-compact, div.jp-volume-bar, div.jp-volume-bar-value, a.jp-full-screen, a.jp-full-screen:hover, a.jp-restore-screen, a.jp-restore-screen:hover, a.jp-repeat, a.jp-repeat:hover, a.jp-repeat-off, a.jp-repeat-off:hover, a.jp-shuffle, a.jp-shuffle:hover, a.jp-shuffle-off, a.jp-shuffle-off:hover {
 	background: url("jplayer.midnight.black.png") no-repeat;
 }
 
@@ -693,4 +694,72 @@ a.jp-shuffle-off:hover {
 	font-weight: bold;
 }
 
+/* @compact */
+
+div.jp-compact {
+	width: 280px;
+}
+
+div.jp-compact ul.jp-controls {
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	right: 15px;
+	padding: 0;
+}
+
+div.jp-compact div.jp-type-playlist div.jp-interface {
+	height: 90px;
+}
+
+div.jp-compact div.jp-progress {
+	top: 60px;
+	height: 15px;
+}
+div.jp-compact div.jp-type-playlist div.jp-time-holder {
+	left: 5px;
+	right: 5px;
+}
+div.jp-compact div.jp-time-holder {
+	position: absolute;
+	top: 75px;
+}
+div.jp-compact div.jp-type-playlist div.jp-progress {
+	left: 5px;
+	right: 5px;
+}
+
+div.jp-compact div.jp-type-playlist a.jp-mute,
+div.jp-compact div.jp-type-playlist a.jp-unmute {
+	top: 12px;
+	right: 133px;
+}
+
+div.jp-compact div.jp-type-playlist a.jp-volume-max {
+	top: 12px;
+	right: 66px;
+}
+div.jp-compact div.jp-type-playlist div.jp-volume-bar {
+	top: 32px;
+	right: 104px;
+}
+div.jp-compact div.jp-type-playlist ul.jp-toggles {
+	width: auto;
+	margin: 0;
+	position: absolute;
+	right: 15px;
+	top: 22px;
+}
+#background{
+	min-height:300px;
+	min-width:300px;
+	overflow: hidden;
+	background-color: black;
+}
+#compact-container{
+	margin-left:auto; 
+	margin-right:auto; 
+	width:280px; 
+	padding-top:20px;
+}
 /* @end */

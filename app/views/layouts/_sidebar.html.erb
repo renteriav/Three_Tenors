@@ -1,0 +1,41 @@
+<div id="sidebar-wrapper">
+	<ul class="sidebar-nav">
+		<li class="sidebar-brand">Di Gala</li>
+		<% if admin_signed_in? %>
+		<li class = "<%= active_link("admin") %>" >
+			<%= link_to "Admin", "#" %>
+		</li>
+  		<% end %>
+		<li class = "<%= active_link("events") %> nested">
+			<a>Events<i class="fa fa-chevron-down fa-sm"></i></a>
+			<ul>
+				<li>
+					<%= link_to "Upcoming", root_path %>
+				</li>
+				<li>
+					<%= link_to "Past", events_past_path %>
+				</li>
+			</ul>
+		</li>
+        <li>
+			<%= link_to "About", "#"  %>
+		</li>
+        <li class = "<%= active_link("sound_clips") %> nested">
+			<a>Listen<i class="fa fa-chevron-down fa-sm"></i></a>
+			<ul>
+				<li>
+					<%= link_to "Audio", audio_playlist_path, "data-no-turbolink" => true %>
+				</li>
+				<li>
+					<%= link_to "Video", "#" %>
+				</li>
+			</ul>
+		</li>
+		<li class = "<%= active_link("galleries") %>">
+			<%= link_to "Gallery", concerts_path  %>
+		</li>
+		<li>
+			<%= link_to "Contact", "#"  %>
+		</li>
+	</ul>
+</div>

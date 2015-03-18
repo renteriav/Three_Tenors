@@ -1,0 +1,25 @@
+<div id="main-photo-mobile" class="col-xs-12">
+	<div class="row clear-fix">
+	</div>
+	<div class="row">
+		<h3 class="header-gray-mobile"><%= @header %></h3>
+	</div>
+	<div class="row">
+    	<% @events.each do |event| %>
+			<div class="col-xs-2 datebox-mobile">
+				<%= event.date.strftime('%b') %>
+				<br>
+				<%= event.date.strftime('%d') %>
+			</div>
+			<div class="col-xs-9 event-info">
+				<h5 class="golden" style="margin-top:0px">
+				<%= event.title%>
+				</h5>
+				<p><%= "#{format_day_short(event.date)}, #{format_time(event.time)}" %></p>
+				<p><%= event.location %></p>
+				<p><%= event.street %></p>
+				<p><%= "#{event.city}, #{event.state}, #{event.zip}"%> <%= link_to "(Map)",   "https://www.google.com/maps/place/#{event.street}+#{event.city}+#{event.state}+#{event.zip}", :target => "_blank"%></p>
+			</div>
+		<% end %>
+	</div>
+</div><!--/col-->

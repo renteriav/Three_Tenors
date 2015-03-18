@@ -1,5 +1,28 @@
 module ApplicationHelper
   
+  def resource_name
+    :admin
+  end
+
+  def resource
+    @resource ||= User.new
+  end
+
+  def devise_mapping
+    @devise_mapping ||= Devise.mappings[:admin]
+  end
+  
+  def devise_msg_to_bs(msg)
+    case msg
+    when "alert"
+      "alert-danger"
+    when "notice"
+      "alert-success"
+    end
+  end
+      
+    
+  
 	def full_title(page_title)
 		base_title = "Whitby Studio" 
 		if page_title.empty?
@@ -44,6 +67,10 @@ module ApplicationHelper
     
     def format_day(d)
       d.strftime("%A, %b #{d.day.ordinalize}, %Y")
+    end
+    
+    def format_day_short(d)
+      d.strftime("%a, %b #{d.day.ordinalize}, %Y")
     end
 
     def join_date_time(d, t)

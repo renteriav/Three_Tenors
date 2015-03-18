@@ -1,6 +1,10 @@
 <div id="main-photo">
     <div class="pull-left events-container">
-        <h3 class="header-gray"><%= @header %></h3>
+		<% if mobile_device? %>
+        	<h3 class="header-gray"><%= @header %></h3>
+		<% else %>
+			<h2 class="header-gray"><%= @header %></h2>
+		<% end %>
 		<% @events.each do |event| %>
 			<div class="single-event-container">
 				<div class="datebox inline">
@@ -9,11 +13,16 @@
 					<%= event.date.strftime('%d') %>
 				</div>
 				<div class="event-info inline">
+				<% if mobile_device? %>
 					<h5 class="golden" style="margin-top:0px"><%= event.title%></h5>
+				<% else %>
+					<h4 class="golden" style="margin-top:0px"><%= event.title%></h4>
+				<% end %>
 					<p><%= "#{format_day(event.date)}, #{format_time(event.time)}" %></p>
 					<p><%= event.location %></p>
 					<p><%= event.street %></p>
-					<p><%= "#{event.city}, #{event.state}, #{event.zip}"%> <%= link_to "(Map)",   "https://www.google.com/maps/place/#{event.street}+#{event.city}+#{event.state}+#{event.zip}"%>
+					<p><%= "#{event.city}, #{event.state}, #{event.zip}"%> <%= link_to "(Map)",   "https://www.google.com/maps/place/#{event.street}+#{event.city}+#{event.state}+#{event.zip}", :target => "_blank"%>
+				</p>
 				</div>
 			</div>
 		</br>

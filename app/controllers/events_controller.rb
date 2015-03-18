@@ -2,7 +2,8 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_admin!
   skip_before_action :authenticate_admin!, only: [:upcoming, :past]
-
+  before_filter :check_for_mobile
+  layout "administration", only: [:show, :new, :edit, :update, :create, :destroy, :index]
   def index
     @events = Event.all
   end
@@ -23,6 +24,7 @@ class EventsController < ApplicationController
   end
 
   def new
+    @date = Date.today
     @event = Event.new
     @selected_state = 'AZ'
   end

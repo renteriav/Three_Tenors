@@ -10,8 +10,9 @@
  *
  *= require_self
  *= require jquery.ui.all
- *= require bootstrap-timepicker
  *= require gallery/touch_touch
  *= require jquery.fileupload-ui
+ *= require devise_bootstrap_views_less
+ *= require bootstrap-datetimepicker
  *= require_tree .
  */

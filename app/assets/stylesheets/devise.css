@@ -1,0 +1,43 @@
+body{
+	background-color: white;
+}
+
+.module-login div.panel{
+	margin-top:60px;
+	margin-bottom:60px;
+}
+
+.devise-container{
+	border-top: 1px solid #bbb;
+	border-bottom: 1px solid #bbb;
+}
+
+h4.devise {
+	color: #f0f0f0 !important;
+}
+
+.devise footer{
+	background: #eee;
+	color: #999;
+	padding: 30px 20px 60px;
+}
+
+.devise nav{
+	margin-bottom: 0 !important;
+	border-radius: 0 !important;
+}
+
+.devise-container a,{
+	color: #f0f0f0;
+}
+
+.devise-container p{
+	color: #c8c8c8;
+}
+
+.devise-container a:hover,
+.devise-container a:active,
+.devise-container a:focus{
+	text-decoration: none;
+	color: white;
+}

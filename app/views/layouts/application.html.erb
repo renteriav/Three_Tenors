@@ -17,87 +17,44 @@
 
     <%= javascript_include_tag "application" %>
   </head>
-  <body>
+  <body class="black main">
       <div id="wrapper">
-
-          <!-- Sidebar -->
-          <div id="sidebar-wrapper">
-              <ul class="sidebar-nav">
-                  <li class="sidebar-brand">
-                      <a href="#">
-                          Start Bootstrap
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">Dashboard</a>
-                  </li>
-                  <li>
-                      <a href="#">Shortcuts</a>
-                  </li>
-                  <li>
-                      <a href="#">Overview</a>
-                  </li>
-                  <li>
-                      <a href="#">Events</a>
-                  </li>
-                  <li>
-                      <a href="#">About</a>
-                  </li>
-                  <li>
-                      <a href="#">Services</a>
-                  </li>
-                  <li>
-                      <a href="#">Contact</a>
-                  </li>
-              </ul>
-          </div>
+		  <%= render 'layouts/sidebar' %>
 		  <div id="page-content-wrapper">
 
    <nav class="navbar navbar-default darkness">
      <div class="container-fluid logo">
-       <!-- Brand and toggle get grouped for better mobile display -->
-       <div class="navbar-header push-down">
-         <button id="side-bar-toggle" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
-           <span class="sr-only">Toggle navigation</span>
-           <span class="icon-bar"></span>
-           <span class="icon-bar"></span>
-           <span class="icon-bar"></span>
-         </button>
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header container">
+		   <div class="row">
+         	  <button id="side-bar-toggle" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+           	   <span class="sr-only">Toggle navigation</span>
+           	   <span class="icon-bar"></span>
+           	   <span class="icon-bar"></span>
+           	   <span class="icon-bar"></span>
+         	</button>
+	 	  </div>
+		  <div class = "row" style="height:50px; width:20px; float:right; background-color: black;">
+		  </div>
        </div>
 
        <!-- Collect the nav links, forms, and other content for toggling -->
        <div class="collapse navbar-collapse push-down" id="navbar-collapse-1">
             <ul class="nav navbar-nav pull-right">
   			  <% if admin_signed_in? %>
-  			  	<li class = "<%= active_link("admin") %> dropdown" ><%= link_to "Admin", "#"  %>
+  			  	<li class = "<%= active_link("admin") %> dropdown dropdown-main" ><%= link_to "Admin", "#"  %>
 					<ul class="dropdown-menu role='menu' ">
 						<li>
 							<%= link_to('Sign-out', destroy_admin_session_path, :method => :delete) %>
 						</li>
-						<li class="dropdown-submenu dropdown"> <%= link_to "Events", root_path %>
-							<ul class="dropdown-menu">
-								<li>
-								<%= link_to('Index', events_path) %>
-								</li>
-								<li>
-								<%= link_to('New', new_event_path) %>
-								</li>
-							</ul>
+						<li class=""> <%= link_to "Events", events_path %>
 						</li>
-						<li class="dropdown-submenu dropdown"> <%= link_to "Sound Clips", sound_clips_path %>
-							<ul class="dropdown-menu">
-								<li>
-								<%= link_to('Index', sound_clips_path) %>
-								</li>
-								<li>
-								<%= link_to('New', new_sound_clip_path) %>
-								</li>
-							</ul>
+						<li class=""> <%= link_to "Sound Clips", sound_clips_path %>
 						</li>
 					</ul>
 				</li>
   			  <% end %>
-			  <li class = "<%= active_link("events") %> dropdown" >
+			  <li class = "<%= active_link("events") %> dropdown dropdown-main" >
 				<%= link_to "Events", root_path %>
 				<ul class="dropdown-menu" role="menu">
 					<li>
@@ -109,7 +66,7 @@
 				</ul>
 			  </li>
               <li><%= link_to "About", "#"  %></li>
-              <li class = "<%= active_link("sound_clips") %> dropdown">
+              <li class = "<%= active_link("sound_clips") %> dropdown dropdown-main">
 				  <%= link_to "Listen", audio_playlist_path, "data-no-turbolink" => true %>
 				  <ul class="dropdown-menu" role="menu">
 					 <li>
