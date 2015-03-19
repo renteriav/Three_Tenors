@@ -1,26 +1,23 @@
-<table class="table table-hover gray">
-  <thead>
-  	<tr>
-    	<th>Title</th>
-    	<th>Location</th>
-    	<th>Date</th>
-		<th>Time</th>
-		<th></th>
-    	<th></th>
-    	<th></th>
-  	</tr>
-   </thead>
+<table class="table table-hover">
+  <tr>
+    <th>Title</th>
+    <th>Location</th>
+    <th>Date</th>
+	<th>Time</th>
+	<th></th>
+    <th></th>
+    <th></th>
+  </tr>
     <% @events.each do |event| %>
       <tr>
         <td><%= event.title %></td>
         <td><%= event.location %></td>
         <td><%= format_day event.date %></td>
 		<td><%= format_time event.time %></td>
-		<td><%= link_to 'Info', event, class: "btn btn-mini btn-success bold" %></td>
-        <td><%= link_to 'Edit', edit_event_path(event), class: "btn btn-mini btn-info bold" %></td>
-        <td><%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?'}, class: "triger btn btn-mini btn-danger bold" %></td>
+		<td><%= link_to 'Info', event %></td>
+        <td><%= link_to 'Edit', edit_event_path(event) %></td>
+        <td><%= link_to 'Delete', event, method: :delete, remote: true, class: "triger" %></td>
       </tr>
     <% end %>
 </table>
 <%= link_to 'New Event', new_event_path, class: "btn btn-small btn-primary" %>
-<br><br>
