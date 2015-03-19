@@ -14,5 +14,6 @@
  *= require jquery.fileupload-ui
  *= require devise_bootstrap_views_less
  *= require bootstrap-datetimepicker
+ *= require morris
  *= require_tree .
  */

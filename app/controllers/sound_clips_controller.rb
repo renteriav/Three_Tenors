@@ -29,8 +29,9 @@ class SoundClipsController < ApplicationController
     @sound_clip = SoundClip.new(sound_clip_params)
       
       if @sound_clip.save
+        flash[:notice] = 'Sound clip successfully uploaded.'
             respond_to do |format|
-              format.html { redirect_to sound_clips_path, notice: 'Sound clip was successfully created.' }
+              format.html { redirect_to sound_clips_path}
               format.json {
                 render :json => {files:[@sound_clip.to_jq_upload]},status: :created, location: @sound_clip}
                 

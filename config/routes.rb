@@ -20,4 +20,6 @@ ThreeTenors::Application.routes.draw do
   
   get "concerts", to: "galleries#concerts"
   
+  get "dashboard", to: "dashboard#dashboard"
+  
 end

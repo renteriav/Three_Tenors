@@ -29,6 +29,8 @@ gem 'carrierwave'
 gem 'fog'
 gem 'devise'
 gem 'devise-bootstrap-views'
+gem 'morrisjs-rails'
+gem 'raphael-rails'
 gem 'pg', '0.12.2'
 
 group :development, :test do 

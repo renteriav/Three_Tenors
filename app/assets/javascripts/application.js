@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require jquery.ui.all
 //= require moment
+//= require raphael
+//= require morris
 //= require bootstrap-datetimepicker
 //= require gallery/galleria
 //= require gallery/touch_touch

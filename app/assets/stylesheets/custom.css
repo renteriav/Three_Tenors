@@ -2,6 +2,11 @@
 	background-color: black;
 }
 
+
+.inline{
+	display: inline-block !important;
+}
+
 .debug_dump {
   clear: both;
   float: left;
@@ -371,8 +376,4 @@ footer{
 }
 .bootstrap-datetimepicker-widget.dropdown-menu {
 	background-color: white !important;
-}
-
-footer{
-	color: #F0F0F0;
 }
