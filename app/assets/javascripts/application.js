@@ -15,7 +15,6 @@
 //= require jquery_ujs
 //= require jquery.ui.all
 <<<<<<< HEAD
-//= require bootstrap-timepicker
 =======
 //= require moment
 //= require bootstrap-datetimepicker
