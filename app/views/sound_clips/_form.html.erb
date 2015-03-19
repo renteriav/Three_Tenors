@@ -1,59 +1,40 @@
-
-<div class="fileupload-buttonbar">
 <%= form_for @sound_clip, :html => { :multipart => true, :id => "fileupload"  } do |f| %>
         <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
-
+        <div class="row fileupload-buttonbar">
+            <div class="span7">
                 <!-- The fileinput-button span is used to style the file input field as button -->
-	<div class="form-horizontal">
-		<div class="col-md-6">
-			 <div class="form-group">
-			     <%= f.label :title, class: "control-label col-sm-3" %>
-			 	<div class="col-sm-9">
-			     	 <%= f.text_field :title, id: "title", class: "form-control" %>
-			 	</div>
-			 </div>
-			 <div class="form-group">
-			     <%= f.label :composer, class: "control-label col-sm-3" %>
-			 	<div class="col-sm-9">
-			     	<%= f.text_field :description, id: "description", class: "form-control" %>
-			 	</div>
-			 </div>
-			 <div class="form-group">
-				<div class="col-sm-9 col-sm-offset-3">
-                	<span class="btn btn-success fileinput-button">
-                    	<i class="fa fa-plus"></i>
-                    	<span>Add Audio Clip...</span>
-                    	<%= f.file_field :attachment %>
-                	</span>
-				</div>
-            </div>
-		</div>
-	</div>
-	<div class="col-md-12">
-		<div class="row">
-			<div class="col-md-12">
-				<div id="upload_errors" class="col-sm-12"></div>
-			</div>
-		</div>
-    	<div class="row">
-			<div class="col-xs-12 col-lg-10" style="overflow: scroll">
-                <!-- The global progress bar -->
-         	   <div class="progress progress-success progress-striped active fade">
-				   <div class="bar" style="width:0%;"></div>
-         	  </div>
-        <!-- The loading indicator is shown during image processing -->
-    		  <div class="fileupload-loading"></div>
-        <!-- The table listing the files available for upload/download -->
-    		  <div class="table-responsive">
-			  <table class="table j-query-upload-controls">
-				  <tbody class="files"</tbody>
-    		  </table></div>
-		   </div>
-	    </div>
-   </div>
-<% end %>    
-</div>
+		        <div class="field">
+		          <%= f.label :title %>
+		          <%= f.text_field :title, id: "title" %>
+		        </div>
+		        <br>
+		        <div class="field">
+		          <%= f.label :composer %>
+		          <%= f.text_field :description, id: "description" %>
+		        </div>
+				<br>
+                <span class="btn btn-success fileinput-button">
+                    <i class="icon-plus icon-white"></i>
+                    <span>Add Audio Clip...</span>
+                    <%= f.file_field :attachment %>
+                </span>
 
+            </div>
+			<div id="upload_errors"></div>
+            <div class="span5">
+                <!-- The global progress bar -->
+                <div class="progress progress-success progress-striped active fade">
+                    <div class="bar" style="width:0%;"></div>
+                </div>
+            </div>
+        </div>
+        <!-- The loading indicator is shown during image processing -->
+        <div class="fileupload-loading"></div>
+        <br>
+        <!-- The table listing the files available for upload/download -->
+        <table class="table"><tbody class="files" data-toggle="modal-gallery" data-target="#modal-gallery"></tbody>
+        </table>
+    <% end %>
 <script>
   var fileUploadErrors = {
     maxFileSize: 'File is too big',
@@ -76,30 +57,26 @@
 			</audio>
 			</span>
 		</td>
-        <td class="name"><span>{%=file.name%}</span>
-	        {% if (file.error) { %}
-	            <div class="error" id="error_span" ><strong><p class="text-danger"> {%=locale.fileupload.errors[file.error] || file.error%}</p></strong></div>
-				{% } %}
-		</td>
-        <td class="size"><span>{%=o.formatFileSize(file.size)%}</span>
-        
-        {% if (o.files.valid && !i) { %}
-            
+        <td class="name gray"><span>{%=file.name%}</span></td>
+        <td class="size gray"><span>{%=o.formatFileSize(file.size)%}</span></td>
+        {% if (file.error) { %}
+            <td class="error" id="error_span" colspan="2"><span class="label label-important">{%=locale.fileupload.error%}</span> {%=locale.fileupload.errors[file.error] || file.error%}</td>
+        {% } else if (o.files.valid && !i) { %}
+            <td>
                 <div class="progress progress-success progress-striped active"><div class="bar" style="width:0%;"></div></div>
-       {% } %}
-   			</td>
+            </td>
             <td class="start">{% if (!o.options.autoUpload) { %}
-                <button id= "start" class="btn btn-info" disabled="true" >
-                    <i class="fa fa-upload"></i>
+                <button class="btn btn-info" >
+                    <i class="icon-upload icon-white"></i>
                     <span>{%=locale.fileupload.start%}</span>
                 </button>
-            </td>
+            {% } %}</td>
         {% } else { %}
             <td colspan="2"></td>
         {% } %}
         <td class="cancel">{% if (!i) { %}
             <button class="btn btn-warning">
-                <i class="fa fa-ban"></i>
+                <i class="icon-ban-circle icon-white"></i>
                 <span>{%=locale.fileupload.cancel%}</span>
             </button>
         {% } %}</td>

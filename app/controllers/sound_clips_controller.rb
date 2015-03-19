@@ -2,8 +2,6 @@ class SoundClipsController < ApplicationController
   before_action :set_sound_clip, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_admin!
   skip_before_action :authenticate_admin!, only: [:playlist]
-  before_filter :check_for_mobile
-  layout "administration", only: [:show, :new, :edit, :update, :create, :destroy, :index]
 
   def index
     @sound_clips = SoundClip.all
@@ -29,9 +27,8 @@ class SoundClipsController < ApplicationController
     @sound_clip = SoundClip.new(sound_clip_params)
       
       if @sound_clip.save
-        flash[:notice] = 'Sound clip successfully uploaded.'
             respond_to do |format|
-              format.html { redirect_to sound_clips_path}
+              format.html { redirect_to sound_clips_path, notice: 'Sound clip was successfully created.' }
               format.json {
                 render :json => {files:[@sound_clip.to_jq_upload]},status: :created, location: @sound_clip}
                 

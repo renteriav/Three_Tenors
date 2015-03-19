@@ -1,12 +1,3 @@
-.black{
-	background-color: black;
-}
-
-
-.inline{
-	display: inline-block !important;
-}
-
 .debug_dump {
   clear: both;
   float: left;
@@ -21,183 +12,6 @@ header{
 
 .logo{
 	background: #000000 url('Di_gala_logo.png') no-repeat 30px 10px;
-
-}
-
-h1{
-	color:#CFB486;
-}
-
-.btn, .btn-primary, .btn-primary > a{
-	color: #F0F0F0 !important;
-}
-
-.btn-primary, .btn-primary > a:hover{
-	color: #F0F0F0 !important;
-	text-decoration: none;
-}
-
-.form-container{
-	width: 1000px;
-	height: 380px;
-}
-.form-div{
-	width:500px;
-	float:left;
-}
-
-label{
-	color:gray;
-}
-
-.state-select{
-	margin-right:10px !important;
-}
-
-.inline{
-	display:inline-block !important;
-}
-.input-xxs {
-	width:40px;
-}
-.input-xs {
-	width:70px;
-}
-.input-sm {
-	width:85px;
-}
-
-.input-med{
-	width:120px !important; 
-}
-
-.input-lrg{
-	width:280px;
-}
-
-.input-group[class*="col-"] {
-	padding-left: 15px !important;
-	padding-right: 15px !important;
-}
-
-.submit-btn{
-	padding-left: 5px !important;
-	padding-right: 5px !important;
-	padding-top: 15px !important;
-}
-.submit-group{
-	margin-top: 20px;
-	margin-bottom: 40px;
-	border-top: 1px solid #bbb;
-}
-.darkness{
-	background-color: #000000 !important;
-	background-image: none;
-	border-bottom: 2px solid #640014 !important;
-	border-left: none;
-	border-right: none;
-	margin-bottom: 0px;
-}
-
-.darkness li > a:hover{
-	background: black !important;
-}
-
-.navbar-white{
-	background-color: #FFFFFF;
-	margin-bottom: 0px;
-}
-
-.push-down{
-	padding-top:50px;
-}
-
-#navbar-collapse-1{
-	min-width: 800px;
-	
-}
-.navbar .nav > li > a {
-	text-shadow: none;
-	color: #F0F0F0;
-}
-
-.navbar .nav > .active-link > a, .sidebar-nav > .active-link > a {
-	color: #CFB486 !important;
-}
-.navbar .nav > li > a:focus, .navbar .nav > li > a:hover {
-	color: #CFB486;
-}
-
-span.brand{
-	width:201px;
-	height:90px;
-}
-
-.main .dropdown-menu > li > a {
-	color: #F0F0F0;
-}
-
-.main .dropdown-menu > li > a:hover{
-	color: #CFB486;
-	background-color: #640014 !important;
-	background-image: none;
-}	
-	
-.main .dropdown-submenu:focus > a, .dropdown-menu > .active-link > a, .dropdown-menu > .active-link > a:hover, .dropdown-menu > .active-link > a:focus {
-    background-image: url('background_3.png') repeat !important;
-    color: #CFB486 !important;
-    outline: 0 none;
-    text-decoration: none;
-}
-
-.main .dropdown-menu{
-  display: none;        
-  background: url('background_3.png') repeat;
-  left: -10px !important;
-  top: 30px;
-  min-width: 150px !important;
-  min-height:80px;
-}
-
-.main .dropdown-menu:after{
-    border-bottom: none !important;
-  }
-
-.main .dropdown-menu:before{
-    border-bottom: none !important;
-  }
-.main .dropdown-submenu > .dropdown-menu{
-	left:100% !important;
-}
-
-.bootstrap-timepicker-widget.dropdown-menu{
-	background-image: none;
-	background-color:#EEEEEE;
-}
-
-.timepicker-picker{
-	background-color: white !important;
-}
-.timepicker-picker .fa{
-	color: #c8c8c8;.black{
-	background-color: black;
-}
-
-.debug_dump {
-  clear: both;
-  float: left;
-  width: 70%; 
-  margin: 45px; 
-  padding: 20px;
-}
-
-header{
-	background-color: black;
-}
-
-.logo{
-	background: #000000 url('Di_gala_logo.png') no-repeat 30px 10px;
-
 }
 
 h1{
@@ -288,24 +102,16 @@ label{
 	margin-bottom: 0px;
 }
 
-.darkness li > a:hover{
-	background: black !important;
-}
-
-.navbar-white{
-	background-color: #FFFFFF;
-	margin-bottom: 0px;
-}
-
 .push-down{
 	padding-top:50px;
 }
 .navbar .nav > li > a {
 	text-shadow: none;
 	color: #F0F0F0;
+	width: 80px;
 }
 
-.navbar .nav > .active-link > a, .sidebar-nav > .active-link > a {
+.navbar .nav > .active-link > a {
 	color: #CFB486 !important;
 }
 .navbar .nav > li > a:focus, .navbar .nav > li > a:hover {
@@ -317,24 +123,24 @@ span.brand{
 	height:90px;
 }
 
-.main .dropdown-menu > li > a {
+.dropdown-menu > li > a {
 	color: #F0F0F0;
 }
 
-.main .dropdown-menu > li > a:hover{
+.dropdown-menu > li > a:hover{
 	color: #CFB486;
 	background-color: #640014 !important;
 	background-image: none;
 }	
 	
-.main .dropdown-submenu:focus > a, .dropdown-menu > .active-link > a, .dropdown-menu > .active-link > a:hover, .dropdown-menu > .active-link > a:focus {
+.dropdown-submenu:focus > a, .dropdown-menu > .active-link > a, .dropdown-menu > .active-link > a:hover, .dropdown-menu > .active-link > a:focus {
     background-image: url('background_3.png') repeat !important;
     color: #CFB486 !important;
     outline: 0 none;
     text-decoration: none;
 }
 
-.main .dropdown-menu{
+.dropdown-menu{
   display: none;        
   background: url('background_3.png') repeat;
   left: -10px !important;
@@ -343,15 +149,15 @@ span.brand{
   min-height:80px;
 }
 
-.main .dropdown-menu:after{
+.dropdown-menu:after{
     border-bottom: none !important;
   }
 
-.main .dropdown-menu:before{
+.dropdown-menu:before{
     border-bottom: none !important;
   }
   
-.main .dropdown-submenu > .dropdown-menu{
+.dropdown-submenu > .dropdown-menu{
 	left:100% !important;
 }
 
@@ -360,20 +166,10 @@ span.brand{
 	background-color:#EEEEEE;
 }
 
-.timepicker-picker{
-	background-color: white !important;
-}
-.timepicker-picker .fa{
-	color: #c8c8c8;
-}
-.bootstrap-datetimepicker-widget.dropdown-menu {
-	background-color: white !important;
-}
-
 footer{
 	color: #F0F0F0;
 }
-}
-.bootstrap-datetimepicker-widget.dropdown-menu {
-	background-color: white !important;
+
+.gray{
+	color:gray;
 }

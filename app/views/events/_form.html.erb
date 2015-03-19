@@ -1,109 +1,68 @@
+<div class="form-container">
 <%= form_for(@event) do |f| %>
   <% if @event.errors.any? %>
-  <div class="row">
-  	<div class="alert alert-danger alert-dismissible" role="alert">
-	  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
-	  </button>
-	  	<h4><i class="fa fa-fw fa-warning"></i>Warning:
-	  	</h4>
-      	<ul>
-      	  <% @event.errors.messages.values.each do |msg| %>
-		  	<%msg.each do  |m| %>
-		    	<li><%= m %></li>
-		    <%end %>
-		  <% end %>
-	   </ul>
-    </div> 
-  </div><!-- row -->
-  <% end %>
-  <div class="row form-horizontal">
-   <div class="col-md-6">
-	<div class="form-group">
-    	 <%= f.label :title, class: "control-label col-sm-2" %>
-		 <div class="col-sm-10">
-    	 	<%= f.text_field :title, class: "form-control" %>
-		</div>
-	</div>
-  	<div class="form-group">
-    	<%= f.label :location, class: "control-label col-sm-2" %>
-		<div class="col-sm-10">
-    		<%= f.text_field :location, class: "form-control" %>
-		</div>
-  	</div>
-  	<div class="form-group">
-    	<%= f.label :street, class: "control-label col-sm-2" %>
-		<div class="col-sm-10">
-    		<%= f.text_field :street, class: "form-control" %>
-		</div>
-  	</div>
-  	<div class="form-group">
-    	<%= f.label :city, class: "control-label col-sm-2" %>
-		<div class="col-sm-10">
-    		<%= f.text_field :city, class: "form-control" %>
-		</div>
-  	</div>
-  	<div class="form-group">
-	  <div class="col-xs-7">
-		  <div class="row" id="state-label">
-  	  	<%= f.label :state, class: "control-label col-sm-4" %>
-	  	<div class="col-sm-8">
-  		  <%= f.select :state, options_for_select(us_states, @selected_state), {:include_blank => false }, { class: "state-select form-control" } %>
-	  	</div>
-		</div>
-      </div>
-	  <div class="col-xs-5">
-		  <div class="row">
-    	<%= f.label :zip, class: "control-label col-sm-4"  %>
-	    <div class="col-sm-8">
-    	  <%= f.text_field :zip, class: "form-control", maxlength: 5 %>
-	    </div>
-	</div>
- 	  </div>
-    </div>
-   </div>
-   <div class="col-md-6">
-	<div class="form-group">
-    	 <%= f.label :date, class: "control-label col-sm-2 col-md-4"  %>
-		 <div class="col-sm-10 col-md-8">
-    	 	<%= f.date_select :date, {:order => [:month, :day, :year], :use_short_month => true, :default => Date.today}, {:class => "form-control input-date inline"} %>
-	     </div>
-	</div>
-	<div class="form-group">
-      	<%= f.label :date, class: "control-label col-sm-2 col-md-4" %>
-	  	<div class='input-group date col-sm-5 col-xs-12'>
-      		<%= text_field_tag "date-box", @date, class: "form-control readonly" %>
-      		<%= f.hidden_field :date, :class => "db-date" %>
-	  	</div>
-	</div>
-	<div class="form-group">
-		<%= f.label :time, class: "control-label col-sm-2 col-md-4" %>
-		<div class='input-group date col-sm-5' id='datetimepicker3'>
-		<%= f.text_field :time, :class => "form-control readonly" %>
-			<span class="input-group-addon"><i class="fa fa-clock-o"></i>
-			</span>
-		</div>
-	</div>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
 
-  	<div class="form-group">
-    	<%= f.label :ticket_link, class: "control-label col-sm-2 col-md-4" %>
-		<div class="col-sm-10 col-md-8">
-    		<%= f.text_field :ticket_link, class: "form-control" %>
-		</div>
+      <ul>
+      <% @event.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+   <div class="form-div inline">
+  	 <div class="field">
+    	 <%= f.label :title %>
+    	 <%= f.text_field :title %>
   	</div>
-  	<div class="form-group">
-    	<%= f.label :location_website, class: "control-label col-sm-2 col-md-4" %>
-		<div class="col-sm-10 col-md-8">
-    		<%= f.text_field :location_website, class: "form-control" %>
-		</div>
+  	<div class="field">
+    	<%= f.label :location %>
+    	<%= f.text_field :location %>
   	</div>
-   </div> <!-- col -->
-  </div> <!-- row form-horizontal -->
-  <div class="row submit-group">
-	   <div class="col-sm-6">
-		   <div class="submit-btn col-sm-5 col-sm-offset-2">
-	     	  <%= f.submit class: "btn btn-block btn-primary"%>
-	 		</div>
-	   </div>
-   </div>
+  	<div class="field">
+    	<%= f.label :street %>
+    	<%= f.text_field :street %>
+  	</div>
+  	<div class="field">
+    	<%= f.label :city %>
+    	<%= f.text_field :city %>
+  	</div>
+  	<div class="field  inline">
+  	  <%= f.label :state %>
+  	<%= f.select :state, options_for_select(us_states, @selected_state), {:include_blank => false }, { class: "input-med state-select" } %>
+  	</div>
+  	<div class="field inline">
+    	<%= f.label :zip %>
+    	<%= f.text_field :zip, class: "input-xs",maxlength: 5 %>
+ 	</div>
+   </div><!-- column -->
+   <div class="form-div inline">
+  	 <div class="field">
+    	 <%= f.label :date %>
+    	 <%= f.date_select :date, {:order => [:month, :day, :year], :use_short_month => true, :default => Date.today}, {:class => "input-xs"} %>
+  	</div>
+  	<div class="field input-append bootstrap-timepicker">
+    	<%= f.label :time %>
+    	<%= f.text_field :time, :id => "timepicker1", :class => "input-xs" %>
+		<span class="add-on"><i class="icon-time"></i></span>
+  	</div>
+  	<div class="field">
+    	<%= f.label :ticket_link %>
+    	<%= f.text_field :ticket_link %>
+  	</div>
+  	<div class="field">
+    	<%= f.label :location_website %>
+    	<%= f.text_field :location_website %>
+  	</div></br>
+    <div class="actions">
+      <%= f.submit class: "my-button"%>
+	  <button type="button" class="my-button">
+	  <%= link_to 'Cancel', events_path %>
+  </button>
+    </div>
+  </div>
 
 <% end %>
+</div>
