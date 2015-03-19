@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+.black{
+	background-color: black;
+}
+
+>>>>>>> parent of 4d3f00f... Added dashboard
 .debug_dump {
   clear: both;
   float: left;
@@ -169,7 +176,17 @@ span.brand{
 footer{
 	color: #F0F0F0;
 }
+<<<<<<< HEAD
 
 .gray{
 	color:gray;
+=======
+}
+.bootstrap-datetimepicker-widget.dropdown-menu {
+	background-color: white !important;
+}
+
+footer{
+	color: #F0F0F0;
+>>>>>>> parent of 4d3f00f... Added dashboard
 }

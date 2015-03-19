@@ -13,5 +13,10 @@
  *= require bootstrap-timepicker
  *= require gallery/touch_touch
  *= require jquery.fileupload-ui
+<<<<<<< HEAD
+=======
+ *= require devise_bootstrap_views_less
+ *= require bootstrap-datetimepicker
+>>>>>>> parent of 4d3f00f... Added dashboard
  *= require_tree .
  */

@@ -26,6 +26,10 @@ gem 'gon'
 gem 'carrierwave'
 gem 'fog'
 gem 'devise'
+<<<<<<< HEAD
+=======
+gem 'devise-bootstrap-views'
+>>>>>>> parent of 4d3f00f... Added dashboard
 gem 'pg', '0.12.2'
 
 group :development, :test do 

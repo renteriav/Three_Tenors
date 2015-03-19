@@ -157,6 +157,11 @@ GEM
     minitest (5.5.1)
     mocha (1.1.0)
       metaclass (~> 0.0.1)
+<<<<<<< HEAD
+=======
+    momentjs-rails (2.9.0)
+      railties (>= 3.1)
+>>>>>>> parent of 4d3f00f... Added dashboard
     multi_json (1.11.0)
     multi_xml (0.5.5)
     net-scp (1.2.1)
@@ -294,6 +299,10 @@ DEPENDENCIES
   jquery-ui-themes
   less-rails
   mocha
+<<<<<<< HEAD
+=======
+  momentjs-rails (>= 2.9.0)
+>>>>>>> parent of 4d3f00f... Added dashboard
   pg (= 0.12.2)
   pry
   rails (= 4.1)

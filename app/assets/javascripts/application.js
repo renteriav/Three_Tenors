@@ -14,7 +14,12 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require jquery.ui.all
+<<<<<<< HEAD
 //= require bootstrap-timepicker
+=======
+//= require moment
+//= require bootstrap-datetimepicker
+>>>>>>> parent of 4d3f00f... Added dashboard
 //= require gallery/galleria
 //= require gallery/touch_touch
 //= require jquery-fileupload
